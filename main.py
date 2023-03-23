@@ -24,7 +24,7 @@ def fetch_prices():
     timeslot_end = datetime.now(timezone.utc)
     end_date = timeslot_end.strftime(DATETIME_FORMAT)
     start_data = (timeslot_end - timedelta(days=DATA_SLICE_DAYS)).strftime(DATETIME_FORMAT)
-    url = f'https://production.api.coindesk.com/v2/price/values/{config.currency}?ohlc=true&start_date={start_data}&end_date={end_date}'
+    url = f'https://api.kraken.com/0/public/Ticker?pair=XBTGBP,XMRGBP,XTZGBP'
     req = Request(url)
     data = urlopen(req).read()
     external_data = json.loads(data)
