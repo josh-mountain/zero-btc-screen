@@ -67,15 +67,15 @@ and "picture" screens are select:
 ```cfg
 [base]
 console_logs             : false
-#logs_file               : /tmp/zero-btc-screen.log
+#logs_file                : /tmp/zero-btc-screen.log
 dummy_data               : false
-refresh_interval_minutes : 15
+refresh_interval_minutes : 1
 currency                 : BTC
 
 # Enabled screens or devices
 screens : [
-    epd2in13v2
-#    epd2in13v3
+#    epd2in13v2
+    epd2in13v3
 #    epd2in13bv3
 #    epd2in7
 #    epd3in7
@@ -86,25 +86,31 @@ screens : [
 # Configuration per screen
 # This doesn't make any effect if screens are not enabled above
 [epd2in13v2]
-mode : candle
+#mode : line
+#mode : candle
 
 [epd2in13v3]
-mode : candle
+mode : line
+#mode : candle
 
 [epd2in13bv3]
-mode : line
+#mode  : line
+#mode  : candle
 
 [epd2in7]
-mode : candle
+#mode : line
+#mode : candle
 
 [epd3in7]
-mode : candle
+#mode  : line
+#mode  : candle
 
 [picture]
-filename : /home/pi/output.png
+filename : /home/{username}/output.png
+mode : line
 
 [inkyWhatRBW]
-mode : candle
+#mode : candle
 ```
 
 ### Autostart
